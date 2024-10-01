@@ -1,14 +1,13 @@
-FROM node:14
+FROM node:18
 
 WORKDIR /app
 
-COPY package*.json ./
+# 假设您的Nuxt项目在 'your_nuxt_project' 目录中
+COPY ./server/package*.json ./
 RUN npm install
 
-COPY . .
-
-RUN npm run build
+COPY server .
 
 EXPOSE 3000
 
-CMD [ "npm", "start" ]
+CMD [ "node", "index.mjs" ]
