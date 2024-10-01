@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  nuxt:
+    build:
+      context: .
+      dockerfile: Dockerfile.nuxt
+    container_name: nuxt_app
+    ports:
+      - "3000:3000"
+    networks:
+      - app_network
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx_proxy
+    ports:
+      - "8082:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - nuxt
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
