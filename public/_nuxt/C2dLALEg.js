@@ -1,0 +1,1 @@
+import{a3 as r,s as c,f as d,o as u,c as l,a,t as i,e as o}from"./uvSAOa50.js";const f=r("home",()=>{const t=c(0);return{count:t,add:()=>{t.value++}}}),_=d({__name:"two",setup(t){const e=f();return(m,n)=>(u(),l("div",null,[a("h1",null,"首頁:"+i(o(e).count),1),a("button",{onClick:n[0]||(n[0]=(...s)=>o(e).add&&o(e).add(...s))}," click ")]))}});export{_ as default};
