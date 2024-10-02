@@ -116,7 +116,7 @@ const unheadPlugins = true ? [CapoPlugin({ track: true })] : [];
 
 const renderSSRHeadOptions = {"omitLineBreaks":false};
 
-const appHead = {"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"name":"description","content":"appDescription"},{"name":"apple-mobile-web-app-status-bar-style","content":"black-translucent"},{"name":"theme-color","media":"(prefers-color-scheme: light)","content":"white"},{"name":"theme-color","media":"(prefers-color-scheme: dark)","content":"#222222"}],"link":[{"rel":"icon","href":"/favicon.ico","sizes":"any"},{"rel":"icon","type":"image/svg+xml","href":"/nuxt.svg"},{"rel":"apple-touch-icon","href":"/apple-touch-icon.png"}],"style":[],"script":[],"noscript":[],"viewport":"width=device-width,initial-scale=1"};
+const appHead = {"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"name":"description","content":"appDescription"},{"name":"apple-mobile-web-app-status-bar-style","content":"black-translucent"},{"name":"theme-color","media":"(prefers-color-scheme: light)","content":"white"},{"name":"theme-color","media":"(prefers-color-scheme: dark)","content":"#222222"}],"link":[{"rel":"icon","href":"/favicon.ico","sizes":"any"},{"rel":"icon","type":"image/svg+xml","href":"/nuxt.svg"},{"rel":"apple-touch-icon","href":"/apple-touch-icon.png"}],"style":[],"script":[],"noscript":[],"viewport":"width=device-width,initial-scale=1 user-scalable=no"};
 
 const appRootTag = "div";
 

@@ -1,0 +1,1 @@
+import{e as o,f as a,o as r,c as s,a as e,g as l}from"./B5CPobxd.js";const u={p:"x4 y10",text:"center teal-700 dark:gray-200"},p=o({__name:"[...all]",setup(m){const n=a();return(c,t)=>(r(),s("main",u,[t[1]||(t[1]=e("div",null,"Not found",-1)),e("div",null,[e("button",{"text-sm":"",btn:"",m:"3 t8",onClick:t[0]||(t[0]=d=>l(n).back())}," Back ")])]))}});export{p as default};
