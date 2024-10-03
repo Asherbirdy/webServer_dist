@@ -126,6 +126,7 @@ const appPageTransition = false;
 const appKeepalive = false;
 const nuxtLinkDefaults = { "componentName": "NuxtLink", "prefetch": true, "prefetchOn": { "visibility": true } };
 const asyncDataDefaults = { "value": null, "errorValue": null, "deep": true };
+const fetchDefaults = {};
 const appId = "nuxt-app";
 function getNuxtAppCtx(id = appId) {
   return getContext(id, {
@@ -728,7 +729,7 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-FrFbqkN3.mjs')
+    component: () => import('./index-DeSj0gls.mjs')
   },
   {
     name: "login",
@@ -1398,7 +1399,7 @@ const plugin = /* @__PURE__ */ defineNuxtPlugin({
     };
   }
 });
-const LazyIcon = defineAsyncComponent(() => import('./index-A1YCCk_q.mjs').then((r) => r["default"] || r.default || r));
+const LazyIcon = defineAsyncComponent(() => import('./index-9JXLG0GA.mjs').then((r) => r["default"] || r.default || r));
 const lazyGlobalComponents = [
   ["Icon", LazyIcon]
 ];
@@ -1617,7 +1618,29 @@ const plugin_GZdQSIsL3h = /* @__PURE__ */ defineNuxtPlugin({
     addAPIProvider("", { resources });
   }
 });
-const hello_8Ua819eJ5y = /* @__PURE__ */ defineNuxtPlugin((nuxtApp) => {
+const customFetch_NgGWtsUol9 = /* @__PURE__ */ defineNuxtPlugin(() => {
+  const $Fetch = $fetch.create({
+    // onRequest: (context: FetchContext) => {
+    // onResponse: ({ response }) => {
+    //   const isJSONData = response._data.includes('{')
+    //   if (isJSONData) {
+    //     return JSON.parse(response._data)
+    //   }
+    //   return response.
+    // },
+    onResponseError({ response }) {
+      console.error(`-
+STATUSCODE: ${response.status}
+RESPONSE_DATA: ${response._data}
+-`);
+      return Promise.reject(response);
+    }
+  });
+  return {
+    provide: {
+      customFetch: $Fetch
+    }
+  };
 });
 const plugins = [
   unhead_0mNQ4rEoMp,
@@ -1631,7 +1654,7 @@ const plugins = [
   colors_W336QiHzDT,
   plugin_server_0Gof9SZzAM,
   plugin_GZdQSIsL3h,
-  hello_8Ua819eJ5y
+  customFetch_NgGWtsUol9
 ];
 const pwaInfo = { "pwaInDevEnvironment": false, "webManifest": { "href": "/manifest.webmanifest", "useCredentials": false, "linkTag": '<link rel="manifest" href="/manifest.webmanifest">' } };
 const __nuxt_component_0 = defineComponent({
@@ -1660,8 +1683,8 @@ const __nuxt_component_0 = defineComponent({
   }
 });
 const layouts = {
-  dashboard: () => import('./dashboard-CTTCLL8u.mjs'),
-  default: () => import('./default-Dpk7-yrY.mjs')
+  dashboard: () => import('./dashboard-BMf1gTnI.mjs'),
+  default: () => import('./default-CAY25kYH.mjs')
 };
 const LayoutLoader = defineComponent({
   name: "LayoutLoader",
@@ -1915,8 +1938,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
     useHead({
       title: appName
     });
-    const colorMode = useColorMode();
-    colorMode.preference = "light";
+    useColorMode();
     return (_ctx, _push, _parent, _attrs) => {
       const _component_VitePwaManifest = __nuxt_component_0;
       const _component_NuxtLayout = __nuxt_component_1;
@@ -1966,7 +1988,7 @@ const _sfc_main$1 = {
     const statusMessage = _error.statusMessage ?? (is404 ? "Page Not Found" : "Internal Server Error");
     const description = _error.message || _error.toString();
     const stack = void 0;
-    const _Error404 = defineAsyncComponent(() => import('./error-404-BAD-AKl_.mjs'));
+    const _Error404 = defineAsyncComponent(() => import('./error-404-B9FJvpdt.mjs'));
     const _Error = defineAsyncComponent(() => import('./error-500-ByiMjkev.mjs'));
     const ErrorTemplate = is404 ? _Error404 : _Error;
     return (_ctx, _push, _parent, _attrs) => {
@@ -2048,5 +2070,5 @@ let entry;
 }
 const entry$1 = (ssrContext) => entry(ssrContext);
 
-export { useRouter as a, useAppConfig as b, appConfig as c, defineNuxtRouteMiddleware as d, entry$1 as default, useNuxtApp as e, asyncDataDefaults as f, get as g, createError as h, useRuntimeConfig as i, navigateTo as j, mergeConfig as m, nuxtLinkDefaults as n, omit as o, resolveRouteObject as r, useHead as u };
+export { useRouter as a, useNuxtApp as b, useRuntimeConfig as c, defineNuxtRouteMiddleware as d, entry$1 as default, useAppConfig as e, fetchDefaults as f, get as g, appConfig as h, asyncDataDefaults as i, createError as j, navigateTo as k, mergeConfig as m, nuxtLinkDefaults as n, omit as o, resolveRouteObject as r, useHead as u };
 //# sourceMappingURL=server.mjs.map

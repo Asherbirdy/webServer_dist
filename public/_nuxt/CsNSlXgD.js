@@ -1,1 +1,0 @@
-import{e as o,o as l,c as n,a as t}from"./B5CPobxd.js";const i=o({__name:"lifeBibleBlog",setup(a){return(r,e)=>(l(),n("div",null,e[0]||(e[0]=[t("h1",null,"Life Bible Blog",-1)])))}});export{i as default};
